@@ -1,6 +1,6 @@
 TwitterProject
 ==============
-![alt tag](https://github.com/olevitsky/todoAPPGIT/blob/master/todoAPP_image2.gif)
+![alt tag](https://github.com/olevitsky/TwitterProject/blob/master/SimpleTwitterDemo.gif)
 
 Simple twitter client that allow to connect to Twitter using user name and password and fetch tweets to the mobile device
 Main features:
