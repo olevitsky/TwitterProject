@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-b4a33be0998bac3437d7cc0e8596a94d46a70c47.jar"
+        jar="C:\Program Files (x86)\Android\android-studio1\sdk\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\intermediates\pre-dexed\debug\classes-9a6bb78f9a008a3cd6b3aed40b9ea6d6c34e4de9.jar"
+        jar="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-e3672f467a94b1dbe3c5c735474916ff60a8542c.jar"
+        jar="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\intermediates\pre-dexed\debug\scribe-codepath-d74bfc6fcca4d8ba421954202c3236f1a904ad76.jar"
+        jar="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\libs\scribe-codepath.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="6e0748acc9e7be0695de0d38016d260df52d9167"/>
+    <item
+        dex="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.8.4-2f99e56f413f27cced7808a1e5676b261fb09e96.jar"
+        jar="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\libs\universal-image-loader-1.8.4.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="eee81e43531ce82db1781c5a8b27781ca384eede"/>
+    <item
+        dex="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\intermediates\pre-dexed\debug\android-async-http-1.4.3-018cd2a92121c7ddd3f7b07333e2e7e099db1dbc.jar"
+        jar="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\libs\android-async-http-1.4.3.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f70e680861fdf9449819003e7799a4e9aca047f8"/>
+    <item
+        dex="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\intermediates\pre-dexed\debug\codepath-utils-4d536b98cc65b4319a031e66a088e84753af44ed.jar"
+        jar="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\libs\codepath-utils.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="10901a5ef726eacf1b2443b7f38dc4cc9cd3f7d4"/>
+    <item
+        dex="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\intermediates\pre-dexed\debug\ActiveAndroid-3.1-adcddac4c58-b05a12ba1668014201cbdff3035f85a2ebfd5341.jar"
+        jar="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\libs\ActiveAndroid-3.1-adcddac4c58.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="e550c03ed8bcfe3b9f97d8c5ce6e8ee305f3beed"/>
+    <item
+        dex="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\intermediates\pre-dexed\debug\codepath-oauth-0.3.0-8297f617df64d3a453eaf205f610b10ecd5438f7.jar"
+        jar="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\libs\codepath-oauth-0.3.0.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b90f1c3541987f690e2fb854775914cc23266250"/>
+
+</pre-dex-items>
