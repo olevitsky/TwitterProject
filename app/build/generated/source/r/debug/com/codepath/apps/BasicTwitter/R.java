@@ -21,14 +21,14 @@ public final class R {
         public static final int loigin_bakcground=0x7f020003;
     }
     public static final class id {
+        public static final int actBody=0x7f080001;
         public static final int action_settings=0x7f08000b;
         public static final int btnSendTweet=0x7f080007;
         public static final int compose_tweet=0x7f08000c;
         public static final int etTweetBody=0x7f080005;
-        public static final int ivProfileImage=0x7f080002;
+        public static final int ivProfileImageHeader=0x7f080002;
         public static final int llTweetDialog=0x7f080000;
         public static final int lvTweets=0x7f080008;
-        public static final int rrBody=0x7f080001;
         public static final int tvBody=0x7f080009;
         public static final int tvScreenName=0x7f080004;
         public static final int tvTimestamp=0x7f08000a;

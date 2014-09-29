@@ -4,14 +4,14 @@ int drawable add_tweet 0x7f020000
 int drawable ic_launcher 0x7f020001
 int drawable ic_twitter_launcher 0x7f020002
 int drawable loigin_bakcground 0x7f020003
+int id actBody 0x7f080001
 int id action_settings 0x7f08000b
 int id btnSendTweet 0x7f080007
 int id compose_tweet 0x7f08000c
 int id etTweetBody 0x7f080005
-int id ivProfileImage 0x7f080002
+int id ivProfileImageHeader 0x7f080002
 int id llTweetDialog 0x7f080000
 int id lvTweets 0x7f080008
-int id rrBody 0x7f080001
 int id tvBody 0x7f080009
 int id tvScreenName 0x7f080004
 int id tvTimestamp 0x7f08000a

@@ -13,8 +13,6 @@ import android.widget.TextView;
 import com.codepath.apps.BasicTwitter.models.Tweet;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-import org.w3c.dom.Text;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -40,7 +38,7 @@ public class TweetArrayAdapter extends ArrayAdapter <Tweet> {
             v = convertView;
         }
         //Find the item within template
-        ImageView ivProfileImage = (ImageView) v.findViewById(R.id.ivProfileImage);
+        ImageView ivProfileImage = (ImageView) v.findViewById(R.id.ivProfileImageHeader);
         TextView tvUserName = (TextView) v.findViewById(R.id.tvUserName);
         TextView tvUserScreenName = (TextView) v.findViewById(R.id.tvScreenName);
         TextView tvBody = (TextView) v.findViewById(R.id.tvBody);

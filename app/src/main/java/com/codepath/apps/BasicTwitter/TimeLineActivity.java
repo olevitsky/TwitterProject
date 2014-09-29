@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.codepath.apps.BasicTwitter.R;
 import com.codepath.apps.BasicTwitter.models.Tweet;
+import com.codepath.apps.BasicTwitter.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONArray;
@@ -29,6 +30,7 @@ public class TimeLineActivity extends Activity {
     private ArrayList<Tweet> tweets;
     private ArrayAdapter<Tweet> aTweets;
     private ListView lvTweets;
+    private User myUser = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,7 @@ public class TimeLineActivity extends Activity {
                 // or customLoadMoreDataFromApi(totalItemsCount);
             }
         });
+        getUserCredentials();
     }
 
     private void customLoadMoreDataFromApi(int page) {
@@ -105,6 +108,7 @@ public class TimeLineActivity extends Activity {
         int id = item.getItemId();
         if (id == R.id.compose_tweet) {
             Intent i = new Intent(this, ComposeTweetActivity.class);
+            i.putExtra("user", myUser);
             startActivityForResult(i, REQUEST_CODE);
             return true;
         }
@@ -126,5 +130,20 @@ public class TimeLineActivity extends Activity {
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
+    }
+
+    private void getUserCredentials() {
+        client.getCredentials(new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(JSONObject json) {
+                myUser = User.fromJSON(json);
+            }
+            public void onFailure(Throwable e, String s) {
+                Log.d("debug", e.toString());
+                Log.d("debug", s.toString());
+                Toast.makeText(getApplicationContext(), "Can't identify the user.", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
     }
 }

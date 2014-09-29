@@ -8,26 +8,22 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TabWidget;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.EditText;
 
 
-import com.codepath.apps.BasicTwitter.R;
 import com.codepath.apps.BasicTwitter.models.Tweet;
+import com.codepath.apps.BasicTwitter.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
-
-import android.widget.EditText;
-
 
 
 public class ComposeTweetActivity extends Activity {
@@ -36,6 +32,11 @@ public class ComposeTweetActivity extends Activity {
     private TwitterClient client;
     private EditText twitterText;
     private TextView twitterCharLeft;
+    private TextView screenName;
+    private TextView userName;
+    private ImageView profileImage;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +46,17 @@ public class ComposeTweetActivity extends Activity {
          twitterText = (EditText) findViewById(R.id.etTweetBody);
         twitterCharLeft = (TextView) findViewById(R.id.tvTweetCharLeft);
         twitterText.addTextChangedListener(inputTextWatcher);
+        screenName = (TextView) findViewById(R.id.tvScreenName);
+        userName = (TextView) findViewById(R.id.tvUserName);
+        profileImage = (ImageView) findViewById(R.id.ivProfileImageHeader);
+        Intent i = this.getIntent();
+        User myUser = (User) i.getExtras().getSerializable("user");
+        if(myUser != null) {
+            screenName.setText(myUser.getScreenName());
+            userName.setText(myUser.getName());
+            ImageLoader imageLoader = ImageLoader.getInstance();
+            imageLoader.displayImage(myUser.getProfileImageUrl(), profileImage);
+        }
     }
 
 

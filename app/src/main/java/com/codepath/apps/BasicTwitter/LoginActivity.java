@@ -23,6 +23,12 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 		return true;
 	}
 
+    // to clear stack - doesn't work in this case
+   // @Override
+  //  public void onBackPressed() {
+   //     moveTaskToBack(true);
+//    }
+
 	// OAuth authenticated successfully, launch primary authenticated activity
 	// i.e Display application "homepage"
 	@Override
@@ -30,8 +36,15 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
         // done only once as token is persistent. So when login next time should go
         // to a different screen
 		Intent i = new Intent(this, TimeLineActivity.class);
+        // be able to go from timeLIne back to main (not sure if works)
+        //i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+       // i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        //i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+       // i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
 		startActivity(i);
         //Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
+
     }
 
 	// OAuth authentication flow failed, handle the error
