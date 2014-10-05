@@ -5,7 +5,7 @@ TwitterProject with Fragments
 
 Simple twitter client that allow to connect to Twitter using user name and password and fetch tweets, mentions and user pfofile to the mobile device
 Main features:
-Implemented in main brunch
+Implemented in main branch
 - User can sign in to Twitter using OAuth login
 - User can view the tweets from their home timeline
   - Displays username, name and body for each tweet
@@ -21,7 +21,7 @@ Implemented in main brunch
  - Utilizes ActiveAndroid ORM to manage data locally
 - User interface and theme the app to feel "twitter branded"
 
-Additional features for brunch: TwitterProjectWithFragments
+Additional features for branch: TwitterProjectWithFragments
  - User can swtich between Timeline and Mention views using tabs
  - User can view their home timeline tweets
  - User can view the recent mentions of their username.
