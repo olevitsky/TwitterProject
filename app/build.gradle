@@ -2,19 +2,19 @@ apply plugin: 'android'
 
 android {
     compileSdkVersion 18
-    buildToolsVersion "20.0.0"
-
+    buildToolsVersion '20.0.0'
     defaultConfig {
-        applicationId "com.codepath.apps.restclienttemplate"
+        applicationId 'com.codepath.apps.restclienttemplate'
         minSdkVersion 14
         targetSdkVersion 18
     }
-
     buildTypes {
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+    }
+    productFlavors {
     }
 }
 

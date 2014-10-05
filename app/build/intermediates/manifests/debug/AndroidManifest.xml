@@ -29,7 +29,8 @@
 
         <activity
             android:name="com.codepath.apps.BasicTwitter.LoginActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -53,6 +54,10 @@
         <activity
             android:name="com.codepath.apps.BasicTwitter.ComposeTweetActivity"
             android:label="@string/title_activity_compose_tweet" >
+        </activity>
+        <activity
+            android:name="com.codepath.apps.BasicTwitter.ProfileActivity"
+            android:label="@string/title_activity_profile" >
         </activity>
     </application>
 

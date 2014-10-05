@@ -41,7 +41,8 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
        // i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         //i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
        // i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        //i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        //i.addCategory(Intent.CATEGORY_HOME);
 		startActivity(i);
         //Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
 
@@ -60,5 +61,6 @@ public class LoginActivity extends OAuthLoginActivity<TwitterClient> {
 	public void loginToRest(View view) {
 		getClient().connect();
 	}
+
 
 }

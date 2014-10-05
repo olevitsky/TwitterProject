@@ -27,6 +27,7 @@
     <style name="Theme.MyAppTheme.ActionBar" parent="@android:style/Widget.Holo.ActionBar">
         <item name="android:background">#ff36648b</item>
         <item name="android:titleTextStyle">@style/ActionBarText</item>
+        <item name="android:backgroundStacked">#ABB39D</item>
 
     </style>
 
@@ -45,6 +46,30 @@
         <item name="android:background">#bf6d7b8d</item>
         <item name="android:cacheColorHint">@android:color/transparent</item>
         <item name="android:minHeight">30.0dp</item>
+    </style>
+
+    <style name="TextViewProfileHeaderName" parent="android:Widget.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">.01</item>
+    </style>
+    <style name="TextViewProfileHeaderTagline" parent="android:Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:shadowColor">#ffffffff</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">.01</item>
+    </style>
+    <style name="TextViewProfileHeaderFollow" parent="android:Widget.TextView">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">#bf000000</item>
     </style>
 
 </resources>

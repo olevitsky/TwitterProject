@@ -20,6 +20,7 @@
     <string name="sample_user_name">\@user_name</string>
     <string name="title_activity_compose_tweet">ComposeTweetActivity</string>
     <string name="title_activity_photos">Flickr Photos</string>
+    <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_time_line">TimeLineActivity</string>
     <string name="tweet_button_label">Tweet</string>
     <string name="tweet_hint">Compose new Tweet....</string>
@@ -54,9 +55,36 @@
         <item name="android:minHeight">30.0dp</item>
     </style>
 
+    <style name="TextViewProfileHeaderFollow" parent="android:Widget.TextView">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textColor">#bf000000</item>
+    </style>
+
+    <style name="TextViewProfileHeaderName" parent="android:Widget.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:shadowColor">#ff000000</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">.01</item>
+    </style>
+
+    <style name="TextViewProfileHeaderTagline" parent="android:Widget.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:shadowColor">#ffffffff</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">.01</item>
+    </style>
+
     <style name="Theme.MyAppTheme.ActionBar" parent="@android:style/Widget.Holo.ActionBar">
         <item name="android:background">#ff36648b</item>
         <item name="android:titleTextStyle">@style/ActionBarText</item>
+        <item name="android:backgroundStacked">#ABB39D</item>
     </style>
 
     <style name="Theme.SimpleTwitterTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">

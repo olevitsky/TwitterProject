@@ -12,8 +12,18 @@
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
+                name="ic_honme"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-hdpi\ic_honme.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-hdpi\ic_launcher.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_mention"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-hdpi\ic_mention.png"
                 qualifiers="hdpi-v4"
                 type="drawable" />
             <file
@@ -32,8 +42,18 @@
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
+                name="ic_honme"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-mdpi\ic_honme.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-mdpi\ic_launcher.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_mention"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-mdpi\ic_mention.png"
                 qualifiers="mdpi-v4"
                 type="drawable" />
             <file
@@ -52,8 +72,18 @@
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
+                name="ic_honme"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-xhdpi\ic_honme.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-xhdpi\ic_launcher.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_mention"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-xhdpi\ic_mention.png"
                 qualifiers="xhdpi-v4"
                 type="drawable" />
             <file
@@ -72,8 +102,18 @@
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
+                name="ic_honme"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-xxhdpi\ic_honme.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
                 name="ic_launcher"
                 path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-xxhdpi\ic_launcher.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_mention"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-xxhdpi\ic_mention.png"
                 qualifiers="xxhdpi-v4"
                 type="drawable" />
             <file
@@ -99,6 +139,11 @@
             <file
                 name="activity_time_line"
                 path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\layout\activity_time_line.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="fragments_tweets_list"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\layout\fragments_tweets_list.xml"
                 qualifiers=""
                 type="layout" />
             <file
@@ -170,10 +215,38 @@
                 </string>
                 <string name="char_left_label" >140
                 </string>
+                <string name="title_activity_profile" >ProfileActivity
+                </string>
             </file>
             <file
                 path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\values\styles.xml"
                 qualifiers="" >
+
+                <style
+                    name="TextViewProfileHeaderName"
+                    parent="android:Widget.TextView" >
+                    <item name="android:textSize">
+14sp
+                    </item>
+                    <item name="android:textStyle">
+bold
+                    </item>
+                    <item name="android:textColor">
+#ffffffff
+                    </item>
+                    <item name="android:shadowColor">
+#ff000000
+                    </item>
+                    <item name="android:shadowDx">
+2
+                    </item>
+                    <item name="android:shadowDy">
+2
+                    </item>
+                    <item name="android:shadowRadius">
+.01
+                    </item>
+                </style>
 
                 <style
                     name="Theme.SimpleTwitterTheme"
@@ -239,6 +312,49 @@ italic
                     <item name="android:titleTextStyle">
 @style/ActionBarText
                     </item>
+                    <item name="android:backgroundStacked">
+#ABB39D
+                    </item>
+                </style>
+
+                <style
+                    name="TextViewProfileHeaderFollow"
+                    parent="android:Widget.TextView" >
+                    <item name="android:textSize">
+10sp
+                    </item>
+                    <item name="android:textStyle">
+italic
+                    </item>
+                    <item name="android:textColor">
+#bf000000
+                    </item>
+                </style>
+
+                <style
+                    name="TextViewProfileHeaderTagline"
+                    parent="android:Widget.TextView" >
+                    <item name="android:textSize">
+12sp
+                    </item>
+                    <item name="android:textStyle">
+normal
+                    </item>
+                    <item name="android:textColor">
+#ff000000
+                    </item>
+                    <item name="android:shadowColor">
+#ffffffff
+                    </item>
+                    <item name="android:shadowDx">
+2
+                    </item>
+                    <item name="android:shadowDy">
+2
+                    </item>
+                    <item name="android:shadowRadius">
+.01
+                    </item>
                 </style>
 
                 <style
@@ -286,6 +402,36 @@ italic
                 <dimen name="activity_horizontal_margin" >64dp
                 </dimen>
             </file>
+            <file
+                name="ic_profile"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-xxhdpi\ic_profile.png"
+                qualifiers="xxhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_profile"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-xhdpi\ic_profile.png"
+                qualifiers="xhdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_profile"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-mdpi\ic_profile.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="ic_profile"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\drawable-hdpi\ic_profile.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="profile"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\menu\profile.xml"
+                qualifiers=""
+                type="menu" />
+            <file
+                name="activity_profile"
+                path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\src\main\res\layout\activity_profile.xml"
+                qualifiers=""
+                type="layout" />
         </source>
         <source path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\generated\res\rs\debug" />
         <source path="C:\Users\oleg\AndroidStudioProjects\TwitterProject\app\build\generated\res\generated\debug" />

@@ -5,15 +5,13 @@
 
     tools:context="com.codepath.apps.BasicTwitter.TimeLineActivity">
 
-    <ListView
+    <FrameLayout
+        android:id="@+id/flContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/lvTweets"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true" />
-</RelativeLayout>
-<!-- From: file:/C:/Users/oleg/AndroidStudioProjects/TwitterProject/app/src/main/res/layout/activity_time_line.xml -->
+        android:layout_alignParentTop="true" >
+    </FrameLayout>
+</RelativeLayout><!-- From: file:/C:/Users/oleg/AndroidStudioProjects/TwitterProject/app/src/main/res/layout/activity_time_line.xml -->

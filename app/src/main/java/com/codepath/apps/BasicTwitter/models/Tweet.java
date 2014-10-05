@@ -35,6 +35,8 @@ public class Tweet extends Model implements Serializable{
     @Column(name = "user", onUpdate = Column.ForeignKeyAction.CASCADE, onDelete = Column.ForeignKeyAction.CASCADE)
     private User user;
 
+
+
      public static Tweet fromJson(JSONObject jsonObject) {
          Tweet tweet = new Tweet();
          // extract values from JSON to populate member var's
@@ -80,6 +82,7 @@ public class Tweet extends Model implements Serializable{
     public User getUser() {
         return user;
     }
+
 
     @Override
     public String toString() {

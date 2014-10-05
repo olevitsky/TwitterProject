@@ -1,6 +1,7 @@
 package com.codepath.apps.BasicTwitter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
@@ -9,8 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.codepath.apps.BasicTwitter.models.Tweet;
+import com.codepath.apps.BasicTwitter.models.User;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.text.ParseException;
@@ -22,8 +25,11 @@ import java.util.Locale;
  * Created by oleg on 9/27/2014.
  */
 public class TweetArrayAdapter extends ArrayAdapter <Tweet> {
-    public TweetArrayAdapter(Context context, List<Tweet> tweets) {
+    private Context context;
+    public TweetArrayAdapter(Context context, List<Tweet> tweets)
+    {
         super(context, 0 , tweets);
+        this.context = context;
     }
 
     @Override
@@ -52,6 +58,17 @@ public class TweetArrayAdapter extends ArrayAdapter <Tweet> {
         tvUserScreenName.setText(("@"+tweet.getUser().getScreenName()));
         tvBody.setText(Html.fromHtml(tweet.getBody()).toString());
         timeStamp.setText(getRelativeTimeStamp(tweet.getCreateAt()));
+        ivProfileImage.setTag(tweet.getUser());
+        ivProfileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, ProfileActivity.class);
+                User user = (User) v.getTag();
+                i.putExtra("user", user);
+                context.startActivity(i);
+                //Toast.makeText(getContext(), "ImageClick", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return v;
 

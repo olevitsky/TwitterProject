@@ -1,5 +1,6 @@
 package com.codepath.apps.BasicTwitter;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +14,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.codepath.apps.BasicTwitter.Fragments.HomeTimeLineFragment;
+import com.codepath.apps.BasicTwitter.Fragments.MentionsTimeLineFragment;
+import com.codepath.apps.BasicTwitter.Fragments.TweetsListFragment;
 import com.codepath.apps.BasicTwitter.R;
+import com.codepath.apps.BasicTwitter.listeners.FragmentTabListener;
 import com.codepath.apps.BasicTwitter.models.Tweet;
 import com.codepath.apps.BasicTwitter.models.User;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -27,23 +32,27 @@ import java.util.List;
 public class TimeLineActivity extends Activity {
     private final int REQUEST_CODE = 20;
     private TwitterClient client;
-    private ArrayList<Tweet> tweets;
-    private ArrayAdapter<Tweet> aTweets;
-    private ListView lvTweets;
+    //   private ArrayList<Tweet> tweets;
+    //   private ArrayAdapter<Tweet> aTweets;
+    //  private ListView lvTweets;
+
+    private TweetsListFragment fragmentTweetsList;
     private User myUser = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_line);
         client = TwitterApplication.getRestClient();
+        setupTabs();
 
-        lvTweets = (ListView) findViewById(R.id.lvTweets);
-        tweets = new ArrayList<Tweet>();
-        aTweets = new TweetArrayAdapter(this, tweets);
-        lvTweets.setAdapter(aTweets);
-        populateTimeLine(-1);
+        // lvTweets = (ListView) findViewById(R.id.lvTweets);
+        //tweets = new ArrayList<Tweet>();
+        // aTweets = new TweetArrayAdapter(this, tweets);
+        // lvTweets.setAdapter(aTweets);
+       // fragmentTweetsList = (TweetsListFragment) getFragmentManager().findFragmentById(R.id.);
+        //populateTimeLine(-1);
         getActionBar().setTitle("Timeline");
-        lvTweets.setOnScrollListener(new EndlessScrollListener() {
+       /* lvTweets.setOnScrollListener(new EndlessScrollListener() {
             @Override
             public void onLoadMore(int page, int totalItemsCount) {
                 // Triggered only when new data needs to be appended to the list
@@ -51,48 +60,38 @@ public class TimeLineActivity extends Activity {
                 customLoadMoreDataFromApi(page);
                 // or customLoadMoreDataFromApi(totalItemsCount);
             }
-        });
+        });*/
         getUserCredentials();
     }
+    private void setupTabs() {
+        ActionBar actionBar = getActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        actionBar.setDisplayShowTitleEnabled(true);
 
-    private void customLoadMoreDataFromApi(int page) {
-        long max_id;
-        if (aTweets.getCount() == 0) {
-            max_id = -1;
-        } else {
-            max_id = (aTweets.getItem(aTweets.getCount()-1).getUid())-1;
-        }
-        populateTimeLine(max_id);
+        ActionBar.Tab tab1 = actionBar
+                .newTab()
+                .setText("Home")
+                //.setIcon(R.drawable.ic_honme)
+                .setTag("HomeTimelineFragment")
+                .setTabListener(
+                        new FragmentTabListener<HomeTimeLineFragment>(R.id.flContainer, this, "first",
+                                HomeTimeLineFragment.class));
+
+        actionBar.addTab(tab1);
+        actionBar.selectTab(tab1);
+
+        ActionBar.Tab tab2 = actionBar
+                .newTab()
+                .setText("Mentions")
+                //.setIcon(R.drawable.ic_mention)
+                .setTag("MentionsTimelineFragment")
+                .setTabListener(
+                        new FragmentTabListener<MentionsTimeLineFragment>(R.id.flContainer, this, "second",
+                                MentionsTimeLineFragment.class));
+
+        actionBar.addTab(tab2);
     }
 
-    public void populateTimeLine(long max_id) {
-        if(isNetworkAvailable()) {
-            // could use ASYNCHTTPResponseHandler, but then would need to manage JSON
-            // So use JsonHandler
-            client.getHomeTimeLine(max_id, new JsonHttpResponseHandler() {
-                @Override
-                public void onSuccess(JSONArray jsonArray) {
-                    //Log.d("JSON" , jsonArray.toString());
-                    ArrayList<Tweet> tweetListFromJson = Tweet.fromJSONArray(jsonArray);
-                    aTweets.addAll(tweetListFromJson);
-                    Tweet.deleteAll();
-                    Tweet.saveAll(tweetListFromJson);
-                }
-
-                @Override
-                public void onFailure(Throwable e, String s) {
-                    Log.d("debug", e.toString());
-                    Log.d("debug", s.toString());
-                }
-            });
-        } else {
-            aTweets.clear();
-            aTweets.notifyDataSetInvalidated();
-            List<Tweet> savedTweets = (List<Tweet>) Tweet.getAll();
-            aTweets.addAll(savedTweets);
-            Toast.makeText(this, "No Network available. Loading local copy", Toast.LENGTH_SHORT).show();
-        }
-    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -111,6 +110,11 @@ public class TimeLineActivity extends Activity {
             i.putExtra("user", myUser);
             startActivityForResult(i, REQUEST_CODE);
             return true;
+        } else if (id == R.id.myProfile) {
+            Intent i = new Intent(this, ProfileActivity.class);
+            i.putExtra("user", myUser);
+            startActivity(i);
+            return true;
         }
         return false;
     }
@@ -120,8 +124,9 @@ public class TimeLineActivity extends Activity {
         // REQUEST_CODE is defined above
         if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
             Tweet tweet = (Tweet) data.getExtras().getSerializable("tweet");
-           tweet.save();
-            aTweets.insert(tweet, 0);
+            tweet.save();
+             HomeTimeLineFragment hft = (HomeTimeLineFragment) getFragmentManager().findFragmentById(R.id.flContainer);
+            hft.insert(tweet, 0);
         }
         //Log.d("FIlter", "DONE WIth filter settings");
     }
@@ -146,4 +151,16 @@ public class TimeLineActivity extends Activity {
             }
         });
     }
+
+
+    // WORKS for back button. for the very first time after login when I hit back button in timeline it takes me back
+    // to timeline, but on the second back it takes to phone home and if I bring app back then back always takes back to phone home.
+  /* @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+       // doesn't help
+        super.onBackPressed();
+        // finish doesn't help here - same behavoir
+        //finish();
+    }*/
 }

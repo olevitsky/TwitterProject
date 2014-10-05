@@ -6,9 +6,18 @@
         android:orderInCategory="100"
         android:showAsAction="never" />
 
+    <item
+        android:id="@+id/myProfile"
+        android:icon="@drawable/ic_profile"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="Profile">
+    </item>
+
     <item android:id="@+id/compose_tweet"
         android:title="@string/new_tweet"
         android:icon="@drawable/add_tweet"
         android:orderInCategory="100"
         android:showAsAction="ifRoom|collapseActionView" />
+
+
 </menu>
