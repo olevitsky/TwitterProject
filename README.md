@@ -1,7 +1,7 @@
 TwitterProject with Fragments
 ==============
-![alt tag](https://github.com/olevitsky/TwitterProject/blob/TwitterProjectWithFragments/Twitter2_timelines.gif)
-![alt tag](https://github.com/olevitsky/TwitterProject/blob/TwitterProjectWithFragments/Twitter2_timelines_2_userProfile_v2.gif)
+![alt tag](https://github.com/olevitsky/TwitterProject/blob/master/Twitter2_timelines_2_userProfile_v3.gif)
+
 
 Simple twitter client that allow to connect to Twitter using user name and password and fetch tweets, mentions and user pfofile to the mobile device
 Main features:
